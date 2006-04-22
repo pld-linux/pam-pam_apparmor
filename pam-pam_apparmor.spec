@@ -1,7 +1,8 @@
 %define		modulename pam_apparmor
 %define		_ver 2.0
 %define		_svnrel 6246
-Summary:	Pam module to add AppArmor change_hat functionality
+Summary:	PAM module to add AppArmor change_hat functionality
+Summary(pl):	Modu³ PAM dodaj±cy funkcjonalno¶æ AppArmor change_hat
 Name:		pam-%{modulename}
 Version:	%{_ver}.%{_svnrel}
 Release:	1
@@ -15,10 +16,16 @@ BuildRequires:	pam-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The pam_apparmor module provides the means for any pam applications
+The pam_apparmor module provides the means for any PAM applications
 that call pam_open_session() to automatically perform an AppArmor
 change_hat operation in order to switch to a user-specific security
 policy.
+
+%description -l pl
+Modu³ pam_apparmor daje mo¿liwo¶æ ka¿dej aplikacji PAM wywo³uj±cej
+pam_open_session() automatycznie wykonaæ operacjê AppArmor change_hat
+w celu prze³±czenia na specyficzn± dla u¿ytkownika politykê
+bezpieczeñstwa.
 
 %prep
 %setup -q -n %{modulename}-%{_ver}
