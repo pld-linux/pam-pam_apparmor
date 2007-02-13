@@ -2,7 +2,7 @@
 %define		_ver 2.0
 %define		_svnrel 126
 Summary:	PAM module to add AppArmor change_hat functionality
-Summary(pl.UTF-8):   Moduł PAM dodający funkcjonalność AppArmor change_hat
+Summary(pl.UTF-8):	Moduł PAM dodający funkcjonalność AppArmor change_hat
 Name:		pam-%{modulename}
 Version:	%{_ver}.%{_svnrel}
 Release:	1
