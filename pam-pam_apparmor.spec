@@ -1,5 +1,5 @@
 %define		modulename pam_apparmor
-%define		_ver 2.1.2
+%define		_ver 2.3
 %define		_svnrel 906
 Summary:	PAM module to add AppArmor change_hat functionality
 Summary(pl.UTF-8):	Moduł PAM dodający funkcjonalność AppArmor change_hat
@@ -9,8 +9,8 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		Base
-Source0:	http://forge.novell.com/modules/xfcontent/private.php/apparmor/AppArmor-2.1.2/%{modulename}-%{_ver}-%{_svnrel}.tar.gz
-# Source0-md5:	b5cca5f597321cbd596a6333ce7e6e02
+Source0:	http://forge.novell.com/modules/xfcontent/private.php/apparmor/AppArmor%202.3-Beta1/%{modulename}-%{_ver}-%{_svnrel}.tar.gz
+# Source0-md5:	8d7c32d7111b6436c625fb42aa39d23e
 URL:		http://forge.novell.com/modules/xfmod/project/?apparmor
 BuildRequires:	libapparmor-devel
 BuildRequires:	pam-devel
@@ -33,6 +33,7 @@ bezpieczeństwa.
 
 %build
 %{__make} \
+	CFLAGS="%{rpmcflags}" \
 	CC="%{__cc}"
 
 %install
@@ -44,4 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README
 %attr(755,root,root) /%{_lib}/security/pam_apparmor.so
