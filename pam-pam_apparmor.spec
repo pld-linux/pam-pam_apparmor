@@ -2,13 +2,13 @@
 Summary:	PAM module to add AppArmor change_hat functionality
 Summary(pl.UTF-8):	Moduł PAM dodający funkcjonalność AppArmor change_hat
 Name:		pam-%{modulename}
-Version:	2.5
+Version:	2.6.0
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Base
-Source0:	http://kernel.org/pub/linux/security/apparmor/AppArmor-%{version}/AppArmor-%{version}.tgz
-# Source0-md5:	4a747d1a1f85cb272d55b52c7e8a4a02
+Source0:	http://launchpad.net/apparmor/2.6/%{version}/+download/apparmor-%{version}.tar.gz
+# Source0-md5:	3b4fb4186ac6440a03d8f2dcf188d4b4
 URL:		http://apparmor.wiki.kernel.org/
 BuildRequires:	libapparmor-devel
 BuildRequires:	pam-devel
@@ -27,7 +27,7 @@ w celu przełączenia na specyficzną dla użytkownika politykę
 bezpieczeństwa.
 
 %prep
-%setup -q -n AppArmor-%{version}
+%setup -q -n apparmor-%{version}
 
 %build
 %{__make} -C changehat/pam_apparmor \
