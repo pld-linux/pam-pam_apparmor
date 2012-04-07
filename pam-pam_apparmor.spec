@@ -12,6 +12,7 @@ Source0:	http://launchpad.net/apparmor/2.7/%{version}/+download/apparmor-%{versi
 URL:		http://apparmor.wiki.kernel.org/
 BuildRequires:	libapparmor-devel >= 1:%{version}
 BuildRequires:	pam-devel
+Requires:	libapparmor >= 1:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
