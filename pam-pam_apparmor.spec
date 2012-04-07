@@ -5,12 +5,12 @@ Name:		pam-%{modulename}
 Version:	2.7.2
 Release:	1
 Epoch:		1
-License:	GPL
+License:	BSD or GPL
 Group:		Base
 Source0:	http://launchpad.net/apparmor/2.7/%{version}/+download/apparmor-%{version}.tar.gz
 # Source0-md5:	2863e85bdfdf9ee35b83db6721fed1f1
 URL:		http://apparmor.wiki.kernel.org/
-BuildRequires:	libapparmor-devel >= %{version}
+BuildRequires:	libapparmor-devel >= 1:%{version}
 BuildRequires:	pam-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,5 +44,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc changehat/pam_apparmor/README
+%doc changehat/pam_apparmor/{COPYING,README}
 %attr(755,root,root) /%{_lib}/security/pam_apparmor.so
