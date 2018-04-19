@@ -2,13 +2,13 @@
 Summary:	PAM module to add AppArmor change_hat functionality
 Summary(pl.UTF-8):	Moduł PAM dodający funkcjonalność AppArmor change_hat
 Name:		pam-%{modulename}
-Version:	2.12
+Version:	2.13
 Release:	1
 Epoch:		1
 License:	BSD or GPL
 Group:		Base
-Source0:	http://launchpad.net/apparmor/2.12/%{version}.0/+download/apparmor-%{version}.tar.gz
-# Source0-md5:	49054f58042f8e51ea92cc866575a833
+Source0:	http://launchpad.net/apparmor/2.13/%{version}.0/+download/apparmor-%{version}.tar.gz
+# Source0-md5:	c6caefb0a558492082226c467f6954cb
 URL:		http://wiki.apparmor.net/
 BuildRequires:	libapparmor-devel >= 1:%{version}
 BuildRequires:	pam-devel
@@ -39,7 +39,9 @@ bezpieczeństwa.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -D changehat/pam_apparmor/pam_apparmor.so $RPM_BUILD_ROOT/%{_lib}/security/pam_apparmor.so
+%{__make} -C changehat/pam_apparmor install \
+	SECDIR=$RPM_BUILD_ROOT/%{_lib}/security \
+	USE_SYSTEM=1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
