@@ -2,13 +2,13 @@
 Summary:	PAM module to add AppArmor change_hat functionality
 Summary(pl.UTF-8):	Moduł PAM dodający funkcjonalność AppArmor change_hat
 Name:		pam-%{modulename}
-Version:	3.0.1
-Release:	2
+Version:	3.0.4
+Release:	1
 Epoch:		1
 License:	BSD or GPL
 Group:		Base
 Source0:	http://launchpad.net/apparmor/3.0/%{version}/+download/apparmor-%{version}.tar.gz
-# Source0-md5:	e05eab22bdd1dfc64854856a7292cf09
+# Source0-md5:	5215a5751a90a45149c699fc3e61a6e8
 URL:		http://wiki.apparmor.net/
 BuildRequires:	libapparmor-devel >= 1:%{version}
 BuildRequires:	pam-devel
